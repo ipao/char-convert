@@ -5,7 +5,7 @@ Bookmarklet for convert wrong type language from English to Thai.
 ##Prepare
 
 1. Turn on bookmark or favorite toolbar. (Instruction for [Firefox](http://support.mozilla.org/en-US/kb/bookmarks-toolbar-display-favorite-websites#os=win7&browser=fx19), [Google Chrome](http://support.google.com/chrome/bin/answer.py?hl=en&answer=95745), [Internet Explorer](http://windows.microsoft.com/en-us/windows-vista/show-or-hide-the-favorites-bar-in-internet-explorer-8))
-2. Left Click on toolbar that you just had turn on to add new bookmark.
+2. Left Click on toolbar that you has just turn on to add new bookmark.
 3. Type "char-convert" for the name of new bookmark.
 4. Copy this code to new bookmark url/location.
 
@@ -19,6 +19,8 @@ Click save or add this new bookmarklet.
 
 1. Drag the wrong words that you want to changed.
 2. Click "char-convert" bookmarklet on bookmark or favorite toolbar.
+3. If you not selected words. It will show popup the input field and you may type the words manually.
+4. The characters that convert to Thai successful will show in the new popup.
 
 
 ## Changed Log
