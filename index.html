@@ -30,7 +30,7 @@
       <section>
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>
-Original Messages <span id="opt">(<a href="#" onclick="change('th')">ไทย</a>/Eng)</span></h3>
+Original Messages <span id="opt">(<a href="#" onclick="return change('th');">ไทย</a>/Eng)</span></h3>
 <p>Copy or type messages to this area.</p>
 <textarea id="origin"></textarea>
 <h3>
@@ -95,13 +95,14 @@ Original Messages <span id="opt">(<a href="#" onclick="change('th')">ไทย</
   };
   function change (lang) {
     if (lang == 'th') {
-      document.getElementById('opt').innerHTML = '(ไทย/<a href="#" onclick="change(\'en\')">Eng</a>)';
+      document.getElementById('opt').innerHTML = '(ไทย/<a href="#" onclick="return change(\'en\');">Eng</a>)';
       origin = 'th';
     }
     else {
-      document.getElementById('opt').innerHTML = '(<a href="#" onclick="change(\'th\')">ไทย</a>/Eng)';
+      document.getElementById('opt').innerHTML = '(<a href="#" onclick="return change(\'th\');">ไทย</a>/Eng)';
       origin = 'en';
     }
+    return false;
   }
 </script>
   </body>
