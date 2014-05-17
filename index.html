@@ -29,7 +29,8 @@
       </header>
       <section>
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Original Messages</h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>
+Original Messages <span id="opt">(<a href="#" onclick="change('th')">ไทย</a>/Eng)</span></h3>
 <p>Copy or type messages to this area.</p>
 <textarea id="origin"></textarea>
 <h3>
@@ -65,17 +66,27 @@
     "ๆ","ไ","ำ","พ","ะ","ั","ี","ร","น","ย","บ","ล","๐","\"","ฎ","ฑ","ธ","ํ","๊","ณ","ฯ","ญ","ฐ",",","ฟ","ห","ก","ด",
     "เ","้","่","า","ส","ว","ง","ฤ","ฆ","ฏ","โ","ฌ","็","๋","ษ","ศ","ซ",".","ผ","ป","แ","อ","ิ","ื","ท","ม","ใ","ฝ","(",
     ")","ฉ","ฮ","ฺ","์","?","ฒ","ฬ"];
+  var origin = 'en';
   document.getElementById('origin').onkeyup = function () {
     var result = '', strInput = document.getElementById('origin').value;
-    if (strInput == '') strInput = prompt("Insert text for convert to right Thai characters.");
     if (strInput != '') {
       for (i = 0; i < strInput.length; i++) {
         if (strInput.charCodeAt(i) == 10) result += '\n';
         else {
-          for (j = 0; j < 92; j++) {
-            if (strInput.charAt(i) == en[j]) {
-              result += th[j];
-              break;
+          if (origin == 'en') {
+            for (j = 0; j < 92; j++) {
+              if (strInput.charAt(i) == en[j]) {
+                result += th[j];
+                break;
+              }
+            }
+          }
+          else {
+            for (j = 0; j < 92; j++) {
+              if (strInput.charAt(i) == th[j]) {
+                result += en[j];
+                break;
+              }
             }
           }
           if (j == 92) result += strInput.charAt(i);
@@ -84,6 +95,16 @@
       document.getElementById('convert').value = result;
     }
   };
+  function change (lang) {
+    if (lang == 'th') {
+      document.getElementById('opt').innerHTML = '(ไทย/<a href="#" onclick="change(\'en\')">Eng</a>)';
+      origin = 'th';
+    }
+    else {
+      document.getElementById('opt').innerHTML = '(<a href="#" onclick="change(\'th\')">ไทย</a>/Eng)';
+      origin = 'en';
+    }
+  }
 </script>
   </body>
 </html>
