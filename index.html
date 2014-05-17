@@ -69,31 +69,29 @@ Original Messages <span id="opt">(<a href="#" onclick="change('th')">ไทย</
   var origin = 'en';
   document.getElementById('origin').onkeyup = function () {
     var result = '', strInput = document.getElementById('origin').value;
-    if (strInput != '') {
-      for (i = 0; i < strInput.length; i++) {
-        if (strInput.charCodeAt(i) == 10) result += '\n';
-        else {
-          if (origin == 'en') {
-            for (j = 0; j < 92; j++) {
-              if (strInput.charAt(i) == en[j]) {
-                result += th[j];
-                break;
-              }
+    for (i = 0; i < strInput.length; i++) {
+      if (strInput.charCodeAt(i) == 10) result += '\n';
+      else {
+        if (origin == 'en') {
+          for (j = 0; j < 92; j++) {
+            if (strInput.charAt(i) == en[j]) {
+              result += th[j];
+              break;
             }
           }
-          else {
-            for (j = 0; j < 92; j++) {
-              if (strInput.charAt(i) == th[j]) {
-                result += en[j];
-                break;
-              }
-            }
-          }
-          if (j == 92) result += strInput.charAt(i);
         }
+        else {
+          for (j = 0; j < 92; j++) {
+            if (strInput.charAt(i) == th[j]) {
+              result += en[j];
+              break;
+            }
+          }
+        }
+        if (j == 92) result += strInput.charAt(i);
       }
-      document.getElementById('convert').value = result;
     }
+    document.getElementById('convert').value = result;
   };
   function change (lang) {
     if (lang == 'th') {
