@@ -67,7 +67,9 @@ Original Messages <span id="opt">(<a href="#" onclick="return change('th');">ไ
     "เ","้","่","า","ส","ว","ง","ฤ","ฆ","ฏ","โ","ฌ","็","๋","ษ","ศ","ซ",".","ผ","ป","แ","อ","ิ","ื","ท","ม","ใ","ฝ","(",
     ")","ฉ","ฮ","ฺ","์","?","ฒ","ฬ"];
   var origin = 'en';
-  document.getElementById('origin').onkeyup = function () {
+  document.getElementById('origin').onchange = convert;
+  document.getElementById('origin').onkeyup = convert;
+  function convert() {
     var result = '', strInput = document.getElementById('origin').value;
     for (i = 0; i < strInput.length; i++) {
       if (strInput.charCodeAt(i) == 10) result += '\n';
@@ -92,7 +94,7 @@ Original Messages <span id="opt">(<a href="#" onclick="return change('th');">ไ
       }
     }
     document.getElementById('convert').value = result;
-  };
+  }
   function change (lang) {
     if (lang == 'th') {
       document.getElementById('opt').innerHTML = '(ไทย/<a href="#" onclick="return change(\'en\');">Eng</a>)';
